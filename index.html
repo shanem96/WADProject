@@ -1,3 +1,4 @@
+  <?xml-stylesheet href="catalogue.xsl" type="text/xsl"?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -9,7 +10,7 @@
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
 
-    <title>Jumbotron Template for Bootstrap</title>
+    <title>SouthWest Shoes</title>
 
     <!-- Bootstrap core CSS -->
 
@@ -19,6 +20,7 @@
 
     <!-- Custom styles for this template -->
     <link href="project.css" rel="stylesheet">
+
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -84,7 +86,142 @@
                     <h1>Product Section</h1>
                 </div>
             </div>
-        </div>
+         </div>
+         <div id = "slideShow">
+		
+			<script language="javascript" type="text/javascript">
+			
+					var num=1
+						img1  = new Image ();
+						img1.src = "images/NikeRosheBlack.jpg";
+						img2 = new Image ()
+						img2.src = "images/NikeRosheGrey.jpg"
+						img3 = new Image ()
+						img3.src = "images/image3.jpg"
+						img4 = new Image ()
+						img4.src = "images/image4.jpg" 
+						
+						
+						
+					
+						function slideshowUp()
+						{
+						num=num+1
+						if (num==6)
+						{num=1}
+						document.mypic.src=eval("img"+num+".src")
+					
+						
+						
+						}
+						
+						function slideshowBack()
+						{
+						num=num-1
+						if (num==0)
+						{num=4}
+						document.mypic.src=eval("img"+num+".src")
+						
+					
+						
+						}
+
+
+			</script>
+		
+		
+		<center> <img src="images/NikeRosheBlack.jpg" name="mypic"  border="0" height="250px" width="400px" /> </center>
+			
+			
+				
+
+		<center> <a href="JavaScript:slideshowBack()"> Back</A>
+				 
+				 <a href="JavaScript:slideshowUp()"> Next</A>
+		</center>
+			
+		</div>
+		
+         
+        <?xml version="1.0"?>
+<?xml-stylesheet href="catalogue.xsl" type="text/xsl"?>
+
+<products>
+
+
+ <brand webbrand="partial" id="brand">
+     <brand_name>Nike</brand_name>
+     
+     <advertisement>
+         <ad_sentence>
+       Buy the latest shoes from a selection of brands
+       and also look at our sales catalogue on brand new deals.
+         </ad_sentence>
+     </advertisement>
+        <br>
+        <br>
+     <shoe>
+         
+         <product>
+             <product_id>Nike</product_id>
+             <short_desc>Roche runs</short_desc>
+             
+              
+             
+          
+             <price pricetype="sale">€90</price>
+             </product>
+         <product>
+           <product_id>Nike</product_id>
+            <short_desc>Air</short_desc>
+         
+            <price pricetype="sale">€88</price>
+       </product>
+        <product>
+            <product_id>Nike</product_id>
+           <short_desc>Air Max</short_desc>
+            
+           <price pricetype="sale">€70</price>
+        </product>
+    </shoe>
+
+    
+
+    <product>
+       
+        <short_desc>Nike Pegasis</short_desc>
+        <price pricetype="sale">€120</price>
+        
+        <available colour="red" location="warehouse">
+            </available>
+        <available colour="blue" location="warehouse">
+             </available>
+        <available colour="white" location="warehouse">
+             </available>
+        <available colour="black" location="warehouse">
+             </available>
+   </product>
+
+</brand>
+<brand webbrand="partial" id="brand">
+     <brand_name>Adidas</brand_name>
+     <shoe1>
+      <product>
+      <short_desc>Adidas All stars</short_desc>
+         
+             <price pricetype="sale">€95</price>
+             </product>
+             
+             
+             </shoe1>
+     
+     
+</brand>
+
+
+</products>
+
+
     </section>
 
     <!-- Contact Section -->
@@ -93,9 +230,131 @@
             <div class="row">
                 <div class="col-lg-12">
                     <h1>Contact Section</h1>
+                    
                 </div>
             </div>
         </div>
+        <script src="Contact.js"> </script>
+        <ul class="toolbar">
+				</ul>
+
+<form name='registration' onSubmit="return Contact();" method="post" action="mailto:jamesredmond96@gmail.com">
+<ul>
+<li><label for="fname">First name:</label></li>
+<li><input type="text" name="fname" size="50" placeholder="i.e: John" /></li>
+<li><label for="lname">Last name:</label></li>
+<li><input type="text" name="lname" size="50" placeholder="i.e: Smith" /></li>
+<li><label for="address">Address:</label></li>
+<li><input type="text" name="address" size="50" placeholder="i.e: Complex5PalmspringsUsa" /></li>
+<li><label for="Mnumber">Mobile number:</label></li>
+<li><input type="text" name="Mnumber"  placeholder="i.e: 00971501234567"/></li>
+<li><label for="email">Email:</label></li>
+<li><input type="text" name="email" size="50" placeholder="i.e: John.Smith@gmail.com" /></li>
+<li><label for="desc">Message:</label></li>
+<li><textarea name="Message" id="Message"></textarea></li>
+<li><input type="submit" name="submit" value="Submit" /></li>
+</ul>
+</form>
+
+
+<script language="javascript" type="text/javascript">
+// Fetching HTML Elements in Variables by ID.
+function Contact()
+{
+var name1 = document.registration.fname;
+var name2 = document.registration.lname;
+var addy = document.registration.address;
+var mnum = document.registration.Mnumber;
+var mailat = document.registration.email;
+
+ if(fname_validation(name1))
+{
+if(lname_validation(name2))
+{
+if(alphanumeric(addy))
+{ 
+if(nums(mnum))
+{
+if(ValidateEmail(mailat))
+{
+
+} 
+}
+} 
+}
+}
+return false;
+} function fname_validation(name1)
+{
+var name1_len = name1.value.length;
+if (name1_len == 3 )
+{
+alert("Please enter your first name");
+name1.focus();
+return false;
+}
+return true;
+}
+function lname_validation(name2)
+{
+var name2_len = name2.value.length;
+if (name2_len == 3 )
+{
+alert("Please enter your last name");
+name2.focus();
+return false;
+}
+return true;
+}
+function alphanumeric(addy)
+{ 
+var letters = /^[0-9a-zA-Z]+$/;
+if(addy.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Please enter the adress in format Countrty-City-Streetnumber without spaces');
+addy.focus();
+return false;
+}
+}
+function nums(mnum)
+{ 
+var digits = /^[0-9]+$/;
+if(mnum.value.match(digits))
+{
+return true;
+}
+else
+{
+alert('Please enter your Mobile number');
+mnum.focus();
+return false;
+}
+}
+function ValidateEmail(mailat)
+{
+var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+if(mailat.value.match(mailformat))
+{
+alert("Thank you for contacting us we will get back you ASAP")
+return true;
+}
+else
+{
+alert("Please enter a valid email address");
+return false;
+}
+
+
+
+
+}
+</script>
+
+
     </section>
     
      <!-- jQuery -->

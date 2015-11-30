@@ -57,7 +57,7 @@ of those sections to manage the look and feel of the site. */
     background: #eee;
 }
 
-.services-section {
+.products-section {
     height: 100%;
     padding-top: 150px;
     text-align: center;
@@ -66,7 +66,65 @@ of those sections to manage the look and feel of the site. */
 
 .contact-section {
     height: 100%;
-    padding-top: 150px;
+    padding-top: 20px;
     text-align: center;
-    background: #eee;
+    background: cyan;
+}
+						
+a:link{
+	color:red;
+	}
+	
+	
+h1{
+	color:red;
+	text-align:center;
+	}
+	
+
+.toolbar li {
+display: inline;
+border:1px solid;
+border-color:#f3f3f3 #bbb #bbb #f3f3f3;
+padding:0em;
+zoom: 1;
+		}
+		p { 
+color:white;
+}
+
+
+input[type="text"]{
+width:55%;
+margin-top:10px;
+height:40px;
+margin-bottom:25px;
+padding:10px;
+border:3px solid red;
+}
+textarea{
+width:55%;
+border:3px solid red;
+padding:10px;
+margin-bottom:25px;
+margin-top:10px;
+height:60px;
+resize:none
+}
+input[type="submit"]{
+width:55%;
+padding:10px 45px;
+background-color:red;
+border:none;
+color:#fff;
+font-size:18px;
+font-weight:700;
+cursor:pointer;
+font-family:'Ubuntu',sans-serif
+}
+
+ul { 
+list-style-type: none;
+margin-top: 2.0em;
+color:red;
 }
