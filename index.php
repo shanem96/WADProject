@@ -134,7 +134,8 @@ function myFunction(xml) {
                 </div>
             </div>
             <button type="button" onclick="loadDoc()">Shoe Catalogue</button>
-           
+            
+         
             
 <br><br>
 <table id="demo"></table>
@@ -223,7 +224,7 @@ function myFunction(xml) {
 				 
 				 <a href="JavaScript:slideshowUp()"> Next</A>
 		</center>
-		
+		<div class ="tabel">
 			     <table border="0" cellpadding="0" align="center"> 
 <tr> 
 <td> 
@@ -254,11 +255,12 @@ function myFunction(xml) {
 <tr>
 <td>
 <b>What Holidays are you interested in?</b>
+<td>
 <select name="Categories"> 
 <option value="WH">Winter Holidays  
 <option value="AH">American Holidays
 <option value="SH">Summer Holidays 
-</select> 
+</select></td> 
 </td> 
 
 </tr> 
@@ -287,6 +289,7 @@ Terrible<input type="radio" name="Rating" value="0">
 </tr>
 <hr>
 </table>
+</div>
 
  
 
@@ -305,23 +308,23 @@ Terrible<input type="radio" name="Rating" value="0">
                     
                 </div>
             </div>
-        </div>
+        
         <script src="Contact.js"> </script>
         <ul class="toolbar">
 				</ul>
 
-<form name='registration' onSubmit="return Contact();" method="post" action="mailto:jamesredmond96@gmail.com">
+<form name='contact' onSubmit="return Contact();" method="post" action="mailto:jamesredmond96@gmail.com">
 <ul>
 <li><label for="fname">First name:</label></li>
-<li><input type="text" name="fname" size="50" placeholder="i.e: John" /></li>
+<li><input type="text" name="fname" placeholder="i.e: John" /></li>
 <li><label for="lname">Last name:</label></li>
-<li><input type="text" name="lname" size="50" placeholder="i.e: Smith" /></li>
+<li><input type="text" name="lname"  placeholder="i.e: Smith" /></li>
 <li><label for="address">Address:</label></li>
-<li><input type="text" name="address" size="50" placeholder="i.e: Complex5PalmspringsUsa" /></li>
+<li><input type="text" name="address"  placeholder="i.e: Complex5PalmspringsUsa" /></li>
 <li><label for="Mnumber">Mobile number:</label></li>
 <li><input type="text" name="Mnumber"  placeholder="i.e: 00971501234567"/></li>
 <li><label for="email">Email:</label></li>
-<li><input type="text" name="email" size="50" placeholder="i.e: John.Smith@gmail.com" /></li>
+<li><input type="text" name="email"  placeholder="i.e: John.Smith@gmail.com" /></li>
 <li><label for="desc">Message:</label></li>
 <li><textarea name="Message" id="Message"></textarea></li>
 <li><input type="submit" name="submit" value="Submit" /></li>
@@ -360,8 +363,8 @@ return false;
 } function fname_validation(name1)
 {
 var name1_len = name1.value.length;
-if (name1_len == 3 )
-{
+if (name1_len <= 2 )
+{        alert("First name must have more than 2 letters");
 alert("Please enter your first name");
 name1.focus();
 return false;
@@ -371,8 +374,9 @@ return true;
 function lname_validation(name2)
 {
 var name2_len = name2.value.length;
-if (name2_len == 3 )
+if (name2_len <= 2)
 {
+    alert("Last name must have more than 2 letters");
 alert("Please enter your last name");
 name2.focus();
 return false;
@@ -425,9 +429,10 @@ return false;
 
 
 }
+
 </script>
 </form>
-    </section>
+</div>    </section>
     
      <!-- jQuery -->
     <script src="js/jquery.js"></script>
