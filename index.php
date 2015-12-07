@@ -118,7 +118,23 @@ function myFunction(xml) {
                           
             <div class="row">
         
-               
+               <div id="demo"><h3>Click below to read about ur products and website</h3></div>
+
+<button type="button" onclick="loadDoc()">About us</button>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      document.getElementById("demo").innerHTML = xhttp.responseText;
+    }
+  };
+  xhttp.open("GET", "shoe.txt", true);
+  xhttp.send();
+}
+</script>
+
               
                 </div>
             </div>
@@ -231,7 +247,7 @@ function myFunction(xml) {
 <b>Full Name : </b> 
 </td> 
 <td> 
-<input type="text" name="fullname" size="20"  >
+<input type="text"/>
 </td> 
 </tr> 
 <tr> 
@@ -239,7 +255,7 @@ function myFunction(xml) {
 <b>Address : </b> 
 </td> 
 <td> 
-<input type="text" name="address" size="20"  >
+<input type="text"/>
 </td> 
 </tr> 
 <tr> 
@@ -247,47 +263,49 @@ function myFunction(xml) {
 <b>Mobile Number : </b> 
 </td> 
 <td> 
-<input type="text" name="Mnumber" size="20" />
+<input type="text"/>
 </td>
 </tr>
-
-
 <tr>
 <td>
 <b>What Holidays are you interested in?</b>
+</td>
 <td>
 <select name="Categories"> 
 <option value="WH">Winter Holidays  
 <option value="AH">American Holidays
 <option value="SH">Summer Holidays 
 </select></td> 
-</td> 
-
 </tr> 
-</table>
-<table border="0" cellpadding="0" align="center"> 
 <tr>
+<td>
 <b>Where have you heard about our service ?</b><br> 
+</td>
+<td>
 Friends<input type="checkbox" name="InformationSource" value="Friend"> 
 Television<input type="checkbox" name="InformationSource" value="TV"> 
 NewsPaper<input type="checkbox" name="InformationSource" value="NP"> 
 Internet<input type="checkbox" name="InformationSource" value="Net"> 
-<p></p> 
+</td>
 </tr>
 <tr>
+<td>
 <b>How would you rate our service?</b><br> 
+</td>
+<td>
 Excellent<input type="radio" name="Rating" value="3"> 
 Good<input type="radio" name="Rating" value="2"> 
 Fair<input type="radio" name="Rating" value="1"> 
 Terrible<input type="radio" name="Rating" value="0"> 
-<p></p>
+</td>
 </tr>
-<tr> 
-<input type="submit" name="SubmitButton" value="Submit"> 
-<input type="reset" name="ResetButton" value="Reset"> 
-<input type="button" name="WelcomeButton" value="Press here" onClick="Welcome()"> 
+<tr>
+<td colspan = "2">
+
+<input type="submit" name="OrderButton" value="Order Product"> 
+</td>
+
 </tr>
-<hr>
 </table>
 </div>
 
