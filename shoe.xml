@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<shoe_catalogue>
+<shoe>
+  <name>Nike Roshe Black</name>
+  <description>An EVA foam outsole absorbs impact and delivers a durability to keep you looking better for longer.</description>
+   <price>€88.00</price>
+  
+</shoe>
+<shoe>
+  <name>Nike Roshe Grey</name>
+  <description> Crafted with a full mesh upper for lightweight breathability, the Roshe One is sat on a Phylon midsole for soft, underfoot cushioning while a padded ankle collar keeps your feet feeling as fresh as they look</description>
+  <price>€88.00</price>
+  
+</shoe>
+<shoe>
+  <name>Nike Free Runs</name>
+  <description>comfortable and lightweight shoes. Come in navy and Orange.</description>
+   <price>€110.00</price>
+</shoe>
+
+<shoe>
+  <name>Nike Air Max</name>
+  <description>comfortable and lightweight shoes. Comes in grey and black.</description>
+   <price>€99.00</price>
+</shoe>
+
+<shoe>
+  <name>Nike Rosche</name>
+  <description>comfortable and lightweight shoes. Come in comoflage.</description>
+   <price>€88.00</price>
+</shoe>
+
+<shoe>
+  <name>Nike Rosche</name>
+  <description>comfortable and lightweight shoes. Come in red.</description>
+   <price>€88.00</price>
+</shoe>
+
+<shoe>
+  <name>Nike Duel Fusion</name>
+  <description>comfortable and lightweight shoes. Come in grey.</description>
+   <price>€78.00</price>
+</shoe>
+
+
+<shoe>
+  <name>Nike Duel Fusion</name>
+  <description>comfortable and lightweight shoes. Come in black and red.</description>
+   <price>€78.00</price>
+</shoe>
+
+<shoe>
+  <name>ZX Flux Blue</name>
+  <description>Crafted with a high-quality woven textile upper for lightweight breathability</description>
+   <price>€88.00</price>
+</shoe>
+
+<shoe>
+  <name>ZX Flux black with white</name>
+  <description>Crafted with a high-quality woven textile upper for lightweight breathability</description>
+   <price>€88.00</price>
+</shoe>
+
+<shoe>
+  <name>ZX Flux Navy</name>
+  <description>Crafted with a high-quality woven textile upper for lightweight breathability</description>
+   <price>€88.00</price>
+</shoe>
+
+<shoe>
+  <name>ZX Flux Grey</name>
+  <description>Crafted with a high-quality woven textile upper for lightweight breathability</description>
+   <price>€88.00</price>
+</shoe>
+
+<shoe>
+  <name>ZX Flux White</name>
+  <description>Crafted with a high-quality woven textile upper for lightweight breathability</description>
+   <price>€88.00</price>
+</shoe>
+
+<shoe>
+  <name>ZX Flux Black</name>
+  <description>Crafted with a high-quality woven textile upper for lightweight breathability</description>
+   <price>€88.00</price>
+</shoe>
+</shoe_catalogue>

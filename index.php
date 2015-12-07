@@ -1,5 +1,6 @@
-  <?xml-stylesheet href="catalogue.xsl" type="text/xsl"?>
+<!-- commenting template - http://startbootstrap.com/template-overviews/agency/ -->
 <!DOCTYPE html>
+<?xml-stylesheet href="catalogue.xsl" type="text/xsl"?>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -22,9 +23,49 @@
     <link href="project.css" rel="stylesheet">
 
 
-    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+   
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
+    
+
+<style>
+table,th,td {
+  border : 1px solid black;
+  border-collapse: collapse;
+}
+th,td {
+  padding: 5px;
+}
+</style>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (xhttp.readyState == 4 && xhttp.status == 200) {
+      myFunction(xhttp);
+    }
+  };
+  xhttp.open("GET", "shoe.xml", true);
+  xhttp.send();
+}
+function myFunction(xml) {
+  var i;
+  var xmlDoc = xml.responseXML;
+  var table="<tr><th>name</th><th>description</th><th>price</th></tr>";
+  var x = xmlDoc.getElementsByTagName("shoe");
+  for (i = 0; i <x.length; i++) { 
+    table += "<tr><td>" +
+    x[i].getElementsByTagName("name")[0].childNodes[0].nodeValue +
+    "</td><td>" +
+    x[i].getElementsByTagName("description")[0].childNodes[0].nodeValue +
+    "</td><td>"+
+     x[i].getElementsByTagName("price")[0].childNodes[0].nodeValue +
+    "</td></tr>";
+  }
+  document.getElementById("demo").innerHTML = table;
+}
+ 
+</script>
 
     
   </head>
@@ -68,16 +109,22 @@
       </div>
     </nav>
 
-<section id="about" class="about-section">
-        <div class="container">
-            <div class="row">
+    <section id="about" class="about-section">
+        <div class="container">     <img src="images/logo.JPG"  alt="Mountain View" style="width:100%;height:400px;">            
+        <div class="row">
+        
                 <div class="col-lg-12">
                     <h1>About Section</h1>
+                          
+            <div class="row">
+        
+               
+              
                 </div>
             </div>
         </div>
+        </div>
     </section>
-
     <!-- Services Section -->
     <section id="products" class="products-section">
         <div class="container">
@@ -86,28 +133,65 @@
                     <h1>Product Section</h1>
                 </div>
             </div>
+            <button type="button" onclick="loadDoc()">Shoe Catalogue</button>
+           
+            
+<br><br>
+<table id="demo"></table>
          </div>
-         <div id = "slideShow">
+         <div id = "slideShow1">
 		
 			<script language="javascript" type="text/javascript">
 			
 					var num=1
 						img1  = new Image ();
 						img1.src = "images/NikeRosheBlack.jpg";
-						img2 = new Image ()
-						img2.src = "images/NikeRosheGrey.jpg"
-						img3 = new Image ()
-						img3.src = "images/image3.jpg"
-						img4 = new Image ()
-						img4.src = "images/image4.jpg" 
 						
+						img2 = new Image ();
+						img2.src = "images/NikeRosheGrey.jpg"
+						
+						img3 = new Image ();
+						img3.src = "images/NikeFree.jpg"
+						
+						img4 = new Image ();
+						img4.src = "images/NikeAirMax.jpg"
+						
+						img5 = new Image ();
+						img5.src = "images/NikeC.jpg"
+						
+						img6 = new Image ();
+						img6.src = "images/nikerosheR.jpg"
+						
+						img7 = new Image ();
+						img7.src = "images/NikeDuelFusionRun.jpg"
+						
+						img8 = new Image ();
+						img8.src = "images/NikeDuelFusion2.jpg"
+						
+						img9 = new Image ();
+						img9.src = "images/ADIDAS-ORIGINALS-ZX-FLUX-SATELLITE-BLUE-2.jpg"  
+						
+						img10 = new Image ();
+						img10.src = "images/adidas-zx-flux-core-black-running-white-3_1.jpg" 
+						
+						img11 = new Image ();
+						img11.src = "images/zxfluxnavy.jpg" 
+						
+						img12 = new Image ();
+						img12.src = "images/zxgrey.jpg"
+						
+						img13 = new Image ();
+						img13.src = "images/zxwhite.jpg"
+						
+						img14 = new Image ();
+						img14.src = "images/zxblack.jpeg"
 						
 						
 					
 						function slideshowUp()
 						{
 						num=num+1
-						if (num==6)
+						if (num==15)
 						{num=1}
 						document.mypic.src=eval("img"+num+".src")
 					
@@ -119,7 +203,7 @@
 						{
 						num=num-1
 						if (num==0)
-						{num=4}
+						{num=14}
 						document.mypic.src=eval("img"+num+".src")
 						
 					
@@ -139,88 +223,76 @@
 				 
 				 <a href="JavaScript:slideshowUp()"> Next</A>
 		</center>
-			
-		</div>
 		
-         
-        <?xml version="1.0"?>
-<?xml-stylesheet href="catalogue.xsl" type="text/xsl"?>
-
-<products>
-
-
- <brand webbrand="partial" id="brand">
-     <brand_name>Nike</brand_name>
-     
-     <advertisement>
-         <ad_sentence>
-       Buy the latest shoes from a selection of brands
-       and also look at our sales catalogue on brand new deals.
-         </ad_sentence>
-     </advertisement>
-        <br>
-        <br>
-     <shoe>
-         
-         <product>
-             <product_id>Nike</product_id>
-             <short_desc>Roche runs</short_desc>
-             
-              
-             
-          
-             <price pricetype="sale">€90</price>
-             </product>
-         <product>
-           <product_id>Nike</product_id>
-            <short_desc>Air</short_desc>
-         
-            <price pricetype="sale">€88</price>
-       </product>
-        <product>
-            <product_id>Nike</product_id>
-           <short_desc>Air Max</short_desc>
-            
-           <price pricetype="sale">€70</price>
-        </product>
-    </shoe>
-
-    
-
-    <product>
-       
-        <short_desc>Nike Pegasis</short_desc>
-        <price pricetype="sale">€120</price>
-        
-        <available colour="red" location="warehouse">
-            </available>
-        <available colour="blue" location="warehouse">
-             </available>
-        <available colour="white" location="warehouse">
-             </available>
-        <available colour="black" location="warehouse">
-             </available>
-   </product>
-
-</brand>
-<brand webbrand="partial" id="brand">
-     <brand_name>Adidas</brand_name>
-     <shoe1>
-      <product>
-      <short_desc>Adidas All stars</short_desc>
-         
-             <price pricetype="sale">€95</price>
-             </product>
-             
-             
-             </shoe1>
-     
-     
-</brand>
+			     <table border="0" cellpadding="0" align="center"> 
+<tr> 
+<td> 
+<b>Full Name : </b> 
+</td> 
+<td> 
+<input type="text" name="fullname" size="20"  >
+</td> 
+</tr> 
+<tr> 
+<td> 
+<b>Address : </b> 
+</td> 
+<td> 
+<input type="text" name="address" size="20"  >
+</td> 
+</tr> 
+<tr> 
+<td> 
+<b>Mobile Number : </b> 
+</td> 
+<td> 
+<input type="text" name="Mnumber" size="20" />
+</td>
+</tr>
 
 
-</products>
+<tr>
+<td>
+<b>What Holidays are you interested in?</b>
+<select name="Categories"> 
+<option value="WH">Winter Holidays  
+<option value="AH">American Holidays
+<option value="SH">Summer Holidays 
+</select> 
+</td> 
 
+</tr> 
+</table>
+<table border="0" cellpadding="0" align="center"> 
+<tr>
+<b>Where have you heard about our service ?</b><br> 
+Friends<input type="checkbox" name="InformationSource" value="Friend"> 
+Television<input type="checkbox" name="InformationSource" value="TV"> 
+NewsPaper<input type="checkbox" name="InformationSource" value="NP"> 
+Internet<input type="checkbox" name="InformationSource" value="Net"> 
+<p></p> 
+</tr>
+<tr>
+<b>How would you rate our service?</b><br> 
+Excellent<input type="radio" name="Rating" value="3"> 
+Good<input type="radio" name="Rating" value="2"> 
+Fair<input type="radio" name="Rating" value="1"> 
+Terrible<input type="radio" name="Rating" value="0"> 
+<p></p>
+</tr>
+<tr> 
+<input type="submit" name="SubmitButton" value="Submit"> 
+<input type="reset" name="ResetButton" value="Reset"> 
+<input type="button" name="WelcomeButton" value="Press here" onClick="Welcome()"> 
+</tr>
+<hr>
+</table>
+
+ 
+
+
+			
+	
 
     </section>
 
@@ -254,7 +326,8 @@
 <li><textarea name="Message" id="Message"></textarea></li>
 <li><input type="submit" name="submit" value="Submit" /></li>
 </ul>
-</form>
+
+
 
 
 <script language="javascript" type="text/javascript">
@@ -353,8 +426,7 @@ return false;
 
 }
 </script>
-
-
+</form>
     </section>
     
      <!-- jQuery -->
@@ -372,69 +444,14 @@ return false;
 
     <div class="container">
       <!-- Example row of columns -->
-      <div class="row">
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-md-4">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>
-
+      
+        
+          <img src="images/banner.PNG" alt="Mountain View" style="width:100%;height:155px;">
+        
+      
+</div>
       <hr>
-  <!-- Contact Section -->
-    <section id="contact">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <h2 class="section-heading">Contact Us</h2>
-                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input type="tel" class="form-control" placeholder="Your Phone *" id="phone" required data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Please enter a message."></textarea>
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button type="submit" class="btn btn-xl">Send Message</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+ 
 
     <footer>
         <div class="container">
@@ -461,7 +478,7 @@ return false;
                     </ul>
                 </div>
             </div>
-        </div>
+        </div>     
     </footer>
 
 
