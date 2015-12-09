@@ -28,11 +28,26 @@
    
     <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
     
+<script>
+function showHint(str) {
+    if (str.length == 0) { 
+        document.getElementById("txtHint").innerHTML = "";
+        return;
+    } else {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
+            }
+        };
+        xmlhttp.open("GET", "gethint.php?q=" + str, true);
+        xmlhttp.send();
+    }
+}
+</script>
 
 <style>
-body {
-    background-image: url("logo.JPG");
-}
+
 table,th,td {
   border : 1px solid black;
   border-collapse: collapse;
@@ -409,6 +424,13 @@ return false;
                     <h1>Shoe Catalogue Section</h1>
                 </div>
             </div>
+             <!-- w3schools source -->
+<p><b>See if we stock your brand!</b></p>
+<form> 
+Search: <input type="text" onkeyup="showHint(this.value)">
+</form>
+<p>Brands we Stock: <span id="txtHint"></span></p>
+
             <h3> Click The button below to see our Catalogue of Brilliant Shoes!</h3>
             <button type="button" class="btn btn-primary" onclick="loadDoc()">Shoe Catalogue</button>
           
@@ -580,18 +602,6 @@ return false;
       
 </div>
       <hr>
- 
-div class="comment">
-    <div class="avatar">
-        <a href="http://tutorialzine.com/">
-        <img src="http://www.gravatar.com/avatar/112fdf7a8fe3609e7af2cd3873b5c6bd?size=50&default=http%3A%2F%2Fdemo.tutorialzine.com%2F2010%2F06%2Fsimple-ajax-commenting-system%2Fimg%2Fdefault_avatar.gif">
-        </a>
-    </div>
-
-    <div class="name"><a href="http://tutorialzine.com/">Person's Name</a></div>
-    <div title="Added at 06:40 on 30 Jun 2010" class="date">30 Jun 2010</div>
-    <p>Comment Body</p>
-</div>
 
 
     <footer>
