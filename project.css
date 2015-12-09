@@ -18,6 +18,7 @@ html {
 }
 body {
     margin: 0
+   
 }
 article,
 aside,
@@ -6853,11 +6854,13 @@ button.close {
  * Code licensed under the Apache License v2.0.
  * For details, see http://www.apache.org/licenses/LICENSE-2.0.
  */
-
+page-top{
+    color:blue;
+}
 html {
     width: 100%;
     height: 100%;
-    background: #3366CC;
+   
 }
 @media(min-width:767px) {
     .navbar {
@@ -6875,25 +6878,25 @@ html {
     height: 100%;
     padding-top: 150px;
     text-align: center;
-    background: #3366CC;
+    background: #fff;
 }
 .about-section {
     height: 1300px;
     padding-top: 20px;
     text-align: center;
-    background: #3366CC;
+    background: #eee;
 }
 .products-section {
     height: 1000px;
     padding-top: 20px;
     text-align: center;
-    background: #3366CC;
+    background: #fff;
 }
 .contact-section {
     height: 750px;
     padding-top: 20px;
     text-align: center;
-    background: #3366CC;
+    background: #eee;
 }
 a:link {
     color: Red;

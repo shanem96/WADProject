@@ -58,7 +58,7 @@ th,td {
 
 
 </style>
-
+<!-- moodle notes and w3schools -->
 <script>
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
@@ -134,7 +134,7 @@ function myFunction(xml) {
     <section id="about" class="about-section">
         <div class="container">                 
         <div class="row">
-        <img src ="images/logo.JPG" height="260px" width="100%">
+        <img src ="images/logo.png" height="500px" width="100%">
                 <div class="col-lg-12">
                     <h1>Product Section</h1>
                     </div>
