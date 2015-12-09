@@ -3,6 +3,7 @@
 <?xml-stylesheet href="catalogue.xsl" type="text/xsl"?>
 <html lang="en">
   <head>
+      
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,7 +13,8 @@
     <link rel="icon" href="../../favicon.ico">
 
     <title>SouthWest Shoes</title>
-
+<script src ="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<sciprt src ="script.js"></sciprt>
     <!-- Bootstrap core CSS -->
 
 
@@ -28,6 +30,9 @@
     
 
 <style>
+body {
+    background-image: url("logo.JPG");
+}
 table,th,td {
   border : 1px solid black;
   border-collapse: collapse;
@@ -35,6 +40,8 @@ table,th,td {
 th,td {
   padding: 5px;
 }
+
+
 </style>
 
 <script>
@@ -93,13 +100,13 @@ function myFunction(xml) {
                         <a class="page-scroll" href="#page-top"></a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#about">About</a>
+                        <a class="page-scroll" href="#about">Products</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#products">Products</a>
+                        <a class="page-scroll" href="#products">Catalogue</a>
                     </li>
                     <li>
-                        <a class="page-scroll" href="#contact">Contact</a>
+                        <a class="page-scroll" href="#contact">Contact </a>
                     </li>
                 </ul>
             </div>
@@ -110,57 +117,37 @@ function myFunction(xml) {
     </nav>
 
     <section id="about" class="about-section">
-        <div class="container">     <img src="images/logo.JPG"  alt="Mountain View" style="width:100%;height:400px;">            
+        <div class="container">                 
         <div class="row">
-        
+        <img src ="images/logo.JPG" height="260px" width="100%">
                 <div class="col-lg-12">
-                    <h1>About Section</h1>
-                          
-            <div class="row">
-        
-               <div id="demo"><h3>Click below to read about ur products and website</h3></div>
+                    <h1>Product Section</h1>
+                    </div>
+                    </div>
+                    
+                    <div id="button"><h3>See more about our Business, Southwest Shoes!</h3></div>
 
-<button type="button" onclick="loadDoc()">About us</button>
+<button type="button" onclick="loadTxt()">Click To see Southwest Shoes info!</button>
 
 <script>
-function loadDoc() {
+function loadTxt() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
     if (xhttp.readyState == 4 && xhttp.status == 200) {
-      document.getElementById("demo").innerHTML = xhttp.responseText;
+      document.getElementById("button").innerHTML = xhttp.responseText;
     }
   };
   xhttp.open("GET", "shoe.txt", true);
   xhttp.send();
 }
 </script>
-
-              
-                </div>
-            </div>
-        </div>
-        </div>
-    </section>
-    <!-- Services Section -->
-    <section id="products" class="products-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Product Section</h1>
-                </div>
-            </div>
-            <button type="button" onclick="loadDoc()">Shoe Catalogue</button>
-            
-         
-            
-<br><br>
-<table id="demo"></table>
-         </div>
-         <div id = "slideShow1">
+                    
+       <!--     <div class="row">
+         <div id = "slideShow1">-->
 		
 			<script language="javascript" type="text/javascript">
 			
-					var num=1
+					var num=1;
 						img1  = new Image ();
 						img1.src = "images/NikeRosheBlack.jpg";
 						
@@ -201,7 +188,7 @@ function loadDoc() {
 						img13.src = "images/zxwhite.jpg"
 						
 						img14 = new Image ();
-						img14.src = "images/zxblack.jpeg"
+						img14.src = "images/zxblack.jpeg";
 						
 						
 					
@@ -241,13 +228,15 @@ function loadDoc() {
 				 <a href="JavaScript:slideshowUp()"> Next</A>
 		</center>
 		<div class ="tabel">
-			     <table border="0" cellpadding="0" align="center"> 
+		    <script src="Purchase.js"> </script>
+			     <form name ='purchase' onSubmit="return Purchase()">
+			         <table border="0" cellpadding="0" align="center"> 
 <tr> 
 <td> 
-<b>Full Name : </b> 
+<b>Name : </b> 
 </td> 
 <td> 
-<input type="text"/>
+<input type="text" name="fname"/>
 </td> 
 </tr> 
 <tr> 
@@ -255,7 +244,7 @@ function loadDoc() {
 <b>Address : </b> 
 </td> 
 <td> 
-<input type="text"/>
+<input type="text" name="address"/>
 </td> 
 </tr> 
 <tr> 
@@ -263,29 +252,57 @@ function loadDoc() {
 <b>Mobile Number : </b> 
 </td> 
 <td> 
-<input type="text"/>
+<input type="text" name="Mnumber"/>
 </td>
 </tr>
 <tr>
 <td>
-<b>What Holidays are you interested in?</b>
+<b>What shoe would you like to buy?</b>
 </td>
 <td>
 <select name="Categories"> 
-<option value="WH">Winter Holidays  
-<option value="AH">American Holidays
-<option value="SH">Summer Holidays 
+<option value="AO">Adidas Originals-ZX-Flux</option>
+<option value="AZX">Adidas ZX-Flux-Core</option>
+<option value="NAM<">Nike Air Max </option>
+<option value="NR<">Nike Roche</option>
+<option value="NFR<">Nike Free runs</option>
+<option value="NDF<">Nike Dual Fusions </option>
 </select></td> 
-</tr> 
+</tr>
+<tr>
+    <td>
+    <b>Colour</b><br>
+    </td>
+    <td>
+    Green<input type="radio" Name="Colour" value="1">
+    Red<input type="radio" Name="Colour" value="2">
+    Blue<input type="radio" Name="Colour" value="3">
+    White<input type="radio" Name="Colour" value="4">    
+    Black<input type="radio" Name="Colour" value="5">     
+    Grey<input type="radio" Name="Colour" value="6">    
+    Orange<input type="radio" Name="Colour" value="7">    
+    Navy<input type="radio" Name="Colour" value="8">    
+    </td>
+</tr>
 <tr>
 <td>
-<b>Where have you heard about our service ?</b><br> 
+<b>Size?</b><br> 
 </td>
 <td>
-Friends<input type="checkbox" name="InformationSource" value="Friend"> 
-Television<input type="checkbox" name="InformationSource" value="TV"> 
-NewsPaper<input type="checkbox" name="InformationSource" value="NP"> 
-Internet<input type="checkbox" name="InformationSource" value="Net"> 
+<select name="Sizes"> 
+<option value="one">1</option> 
+<option value="two">2</option>
+<option value="three">3 </option>
+<option value="four">4 </option>
+<option value="five">5 </option>
+<option value="six">6</option>
+<option value="seven">7 </option>
+<option value="eight">8 </option>
+<option value="nine">9 </option>
+<option value="ten">10</option> 
+<option value="eleven">11</option>
+<option value="twelve">12 </option>
+</select>
 </td>
 </tr>
 <tr>
@@ -295,25 +312,112 @@ Internet<input type="checkbox" name="InformationSource" value="Net">
 <td>
 Excellent<input type="radio" name="Rating" value="3"> 
 Good<input type="radio" name="Rating" value="2"> 
-Fair<input type="radio" name="Rating" value="1"> 
+Okay<input type="radio" name="Rating" value="1"> 
 Terrible<input type="radio" name="Rating" value="0"> 
 </td>
 </tr>
 <tr>
-<td colspan = "2">
+<td>
 
-<input type="submit" name="OrderButton" value="Order Product"> 
+<button type="submit" class="btn btn-primary" name="submit" value="Order">Order Product</button 
+</td>
+<td>
+    
+<button type="reset" class="btn btn-primary" name="ResetButton" value="Reset">Reset</button>     
+    
 </td>
 
 </tr>
+<script language="javascript" type="text/javascript">
+// Fetching HTML Elements in Variables by ID.
+function Purchase()
+{
+var fullname = document.purchase.fname;
+var addr = document.purchase.address;
+var numb = document.purchase.Mnumber;
+
+
+ if(fname_validation(fullname))
+{
+
+if(alphanumeric(addr))
+{ 
+if(nums(numb))
+{
+
+
+}
+} 
+}
+
+return false;
+ function fname_validation(fullname)
+{
+var fullname_len = fullname.value.length;
+if (fullname_len <= 2 )
+{        alert("Name must have more than 2 letters");
+alert("Please enter your name");
+fullname.focus();
+return false;
+}
+return true;
+}
+function alphanumeric(addr)
+{ 
+var letters = /^[0-9a-zA-Z]+$/;
+if(addr.value.match(letters))
+{
+return true;
+}
+else
+{
+alert('Please enter the adress in format Countrty-City-Streetnumber without spaces');
+addr.focus();
+return false;
+}
+}
+function nums(numb)
+{ 
+var digits = /^[0-9]+$/;
+if(numb.value.match(digits))
+{
+return alert('Thank you for purchasing our product');
+}
+else
+{
+alert('Please enter your Mobile number');
+
+
+return false;
+}
+}
+
+}
+
+</script>
 </table>
+</form>
 </div>
 
- 
+  </section>
+    <!-- Services Section -->
+    <section id="products" class="products-section">
+        <div class="close-modal" data-dismiss="modal"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Shoe Catalogue Section</h1>
+                </div>
+            </div>
+            <h3> Click The button below to see our Catalogue of Brilliant Shoes!</h3>
+            <button type="button" class="btn btn-primary" onclick="loadDoc()">Shoe Catalogue</button>
+          
+          
 
-
-			
-	
+<br><br>
+<table id="demo"></table>
+         </div>
+        
 
     </section>
 
@@ -355,11 +459,11 @@ Terrible<input type="radio" name="Rating" value="0">
 // Fetching HTML Elements in Variables by ID.
 function Contact()
 {
-var name1 = document.registration.fname;
-var name2 = document.registration.lname;
-var addy = document.registration.address;
-var mnum = document.registration.Mnumber;
-var mailat = document.registration.email;
+var name1 = document.contact.fname;
+var name2 = document.contact.lname;
+var addy = document.contact.address;
+var mnum = document.contact.Mnumber;
+var mailat = document.contact.email;
 
  if(fname_validation(name1))
 {
@@ -378,7 +482,7 @@ if(ValidateEmail(mailat))
 }
 }
 return false;
-} function fname_validation(name1)
+ function fname_validation(name1)
 {
 var name1_len = name1.value.length;
 if (name1_len <= 2 )
@@ -434,18 +538,20 @@ function ValidateEmail(mailat)
 var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
 if(mailat.value.match(mailformat))
 {
-alert("Thank you for contacting us we will get back you ASAP")
+alert("Thank you for contacting us we will get back you ASAP");
 return true;
 }
 else
 {
 alert("Please enter a valid email address");
+
 return false;
 }
 
 
 
 
+}
 }
 
 </script>
@@ -475,6 +581,18 @@ return false;
 </div>
       <hr>
  
+div class="comment">
+    <div class="avatar">
+        <a href="http://tutorialzine.com/">
+        <img src="http://www.gravatar.com/avatar/112fdf7a8fe3609e7af2cd3873b5c6bd?size=50&default=http%3A%2F%2Fdemo.tutorialzine.com%2F2010%2F06%2Fsimple-ajax-commenting-system%2Fimg%2Fdefault_avatar.gif">
+        </a>
+    </div>
+
+    <div class="name"><a href="http://tutorialzine.com/">Person's Name</a></div>
+    <div title="Added at 06:40 on 30 Jun 2010" class="date">30 Jun 2010</div>
+    <p>Comment Body</p>
+</div>
+
 
     <footer>
         <div class="container">
@@ -482,15 +600,7 @@ return false;
                 <div class="col-md-4">
                     <span class="copyright">Copyright &copy; Your Website 2014</span>
                 </div>
-                <div class="col-md-4">
-                    <ul class="list-inline social-buttons">
-                        <li><a href="#"> Facebook</i></a>
-                        </li>
-                        <li><a href="#">Twitter</i></a>
-                        </li>
-                        <li><a href="#">Instagram</a>
-                        </li>
-                    </ul>
+               
                 </div>
                 <div class="col-md-4">
                     <ul class="list-inline quicklinks">
